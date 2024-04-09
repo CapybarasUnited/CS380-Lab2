@@ -86,8 +86,14 @@ class BinarySearchTree{
    post-order traversal
    */
    public void postOrderTraversal(Node root){
-      //implement me
-   }
+      if(root == null) {
+         return;
+      }
+
+      inOrderTraversal(root.left);
+      inOrderTraversal(root.right);
+      System.out.println(root);
+      return;   }
    
    
    
@@ -176,6 +182,10 @@ public class TreeDemo{
       
       System.out.println("in-order:");
       t1.inOrderTraversal(t1.root);
+      System.out.println();
+
+      System.out.println("post-order:");
+      t1.postOrderTraversal(t1.root);
       System.out.println();
            
       
