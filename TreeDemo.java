@@ -14,7 +14,10 @@ class BinarySearchTree{
 
    Node root;
    
-   
+   public Node insert(int value) {
+      return insert(null, value);
+   }
+
    /*
    recursive insert method
    */
@@ -80,7 +83,7 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+      return -1;
    }
   
   
@@ -90,7 +93,7 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
+	  return -1;
    }
    
    
