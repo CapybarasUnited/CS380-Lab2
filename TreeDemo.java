@@ -113,7 +113,11 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      return -1;
+      if(root.left == null) {
+         return root.value;
+      }
+
+      return getMin(root.left);
    }
   
   
@@ -187,6 +191,8 @@ public class TreeDemo{
       System.out.println("post-order:");
       t1.postOrderTraversal(t1.root);
       System.out.println();
+
+      System.out.printf("Get min:%d\n", t1.getMin(t1.root));
            
       
    }  
