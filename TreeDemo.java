@@ -127,7 +127,11 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  return -1;
+      if(root.right == null) {
+         return root.value;
+      }
+
+      return getMax(root.right);
    }
    
    
@@ -192,8 +196,9 @@ public class TreeDemo{
       t1.postOrderTraversal(t1.root);
       System.out.println();
 
-      System.out.printf("Get min:%d\n", t1.getMin(t1.root));
-           
+      System.out.printf("getMin: %d\n", t1.getMin(t1.root));
+
+      System.out.printf("getMax: %d\n", t1.getMax(t1.root));
       
    }  
 }
