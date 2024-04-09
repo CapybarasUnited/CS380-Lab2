@@ -8,6 +8,10 @@ class Node{
       right = null;
    }
 
+   public String toString() {
+      return String.valueOf(value);
+   }
+
 }
 
 class BinarySearchTree{
@@ -15,7 +19,12 @@ class BinarySearchTree{
    Node root;
    
    public Node insert(int value) {
-      return insert(null, value);
+      if(this.root == null) {
+         this.root = new Node(value);
+         return this.root;
+      }
+
+      return insert(this.root, value);
    }
 
    /*
@@ -53,7 +62,15 @@ class BinarySearchTree{
    in-order traversal
    */
    public void inOrderTraversal(Node root){
-      //implement me
+      if(root == null) {
+         return;
+      }
+
+      inOrderTraversal(root.left);
+      System.out.println(root);
+      inOrderTraversal(root.right);
+      return;
+
    }
    
    
@@ -146,7 +163,7 @@ public class TreeDemo{
       t1.insert(90);
       t1.insert(22);
             
-      System.out.print("in-order :   ");
+      System.out.println("in-order:");
       t1.inOrderTraversal(t1.root);
       System.out.println();
            
