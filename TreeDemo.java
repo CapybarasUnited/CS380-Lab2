@@ -101,9 +101,22 @@ class BinarySearchTree{
    a method to find the node in the tree
    with a specific value
    */
-   public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+   public Node find(Node root, int key){
+      if(root == null) {
+         return null;
+      }
+      
+      else if(root.value == key) {
+         return root;
+      }
+      
+
+      if(root.value > key) {
+         return find(root.left, key);
+      }
+      else {
+         return find(root.right, key);
+      }
    }
    
    
@@ -198,7 +211,11 @@ public class TreeDemo{
 
       System.out.printf("getMin: %d\n", t1.getMin(t1.root));
 
-      System.out.printf("getMax: %d\n", t1.getMax(t1.root));
+      System.out.printf("\ngetMax: %d\n", t1.getMax(t1.root));
+
+      System.out.printf("\nfind(24): %s\n", t1.find(t1.root, 24));
+      System.out.printf("find(91): %s\n", t1.find(t1.root, 91));
+
       
    }  
 }
